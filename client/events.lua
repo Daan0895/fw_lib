@@ -12,3 +12,8 @@ AddEventHandler("fw:createblip", function(x, y, z, name, sprite, colour, display
     AddTextComponentSubstringPlayerName(name)
     EndTextCommandSetBlipName(blipName)
 end)
+
+RegisterNetEvent("fw:notification")
+AddEventHandler("fw:notification", function(text, type, duration)
+    SendNUIMessage({action = 'open', text = text, type = type, duration = duration})
+end)
